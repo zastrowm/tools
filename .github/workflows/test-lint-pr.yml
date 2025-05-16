@@ -87,7 +87,7 @@ jobs:
           - os: macos-latest
             os-name: macos
             python-version: "3.13"
-        fail-fast: false
+      fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout code
