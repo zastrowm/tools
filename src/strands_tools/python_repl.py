@@ -32,7 +32,6 @@ agent.tool.python_repl(code="print('Fresh start')", reset_state=True)
 ```
 """
 
-import fcntl
 import logging
 import os
 import pty
@@ -269,6 +268,8 @@ class PtyManager:
         self.callback = callback
 
     def start(self, code: str) -> None:
+        import fcntl
+
         """Start PTY session with code execution."""
         # Create PTY
         self.supervisor_fd, self.worker_fd = pty.openpty()
