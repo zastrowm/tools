@@ -55,7 +55,7 @@ Documentation = "https://cuddly-sniffle-lrmk2y7.pages.github.io/"
 dev = [
     "commitizen>=4.4.0,<5.0.0",
     "hatch>=1.0.0,<2.0.0",
-    "mypy>=0.981,<1.0.0",
+    "mypy>=0.981,<2.0.0",
     "pre-commit>=3.2.0,<4.2.0",
     "pytest>=8.0.0,<9.0.0",
     "ruff>=0.4.4,<0.5.0",
@@ -70,7 +70,7 @@ docs = [
 [tool.hatch.envs.hatch-static-analysis]
 dependencies = [
   "strands-agents>=0.1.0,<1.0.0",
-  "mypy>=0.981,<1.0.0",
+  "mypy>=0.981,<2.0.0",
   "ruff>=0.4.4,<0.5.0",
 ]
 
