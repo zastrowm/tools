@@ -1,0 +1,10 @@
+__pycache__*
+.pytest_cache
+.ruff_cache
+.coverage
+build
+*.bak
+*.egg-info
+.mypy_cache
+errors/
+repl_state/
