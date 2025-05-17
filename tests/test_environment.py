@@ -3,9 +3,14 @@ Tests for the environment tool using the Agent interface.
 """
 
 import os
+import sys
 
 import pytest
 from strands import Agent
+
+if sys.platform.startswith("win"):
+    pytest.skip("skipping on windows until issue #11 is resolved", allow_module_level=True)
+
 from strands_tools import environment
 
 
