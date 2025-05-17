@@ -160,6 +160,8 @@ def test_file_write_error_handling(mock_user_input, temp_file):
         "input": {"path": invalid_path, "content": "This will fail"},
     }
 
+    print(f"path is {invalid_path}")
+
     result = file_write.file_write(tool=tool_use)
 
     # Verify the error was handled correctly
