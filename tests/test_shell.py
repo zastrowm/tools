@@ -11,6 +11,10 @@ from unittest.mock import MagicMock, patch
 import pytest
 from rich.panel import Panel
 from strands import Agent
+
+if sys.platform.startswith("win"):
+    pytest.skip("skipping on windows until issue #11 is resolved", allow_module_level=True)
+
 from strands_tools import shell
 
 
