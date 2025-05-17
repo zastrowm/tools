@@ -8,7 +8,7 @@ import asyncio
 from prompt_toolkit import HTML, PromptSession
 from prompt_toolkit.patch_stdout import patch_stdout
 
-# Lazy initialize to avoid import errors for tests on windows
+# Lazy initialize to avoid import errors for tests on windows without a terminal
 session: PromptSession | None = None
 
 
