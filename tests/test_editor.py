@@ -4,10 +4,15 @@ Tests for the editor tool using the Agent interface.
 
 import os
 import shutil
+import sys
 from unittest.mock import patch
 
 import pytest
 from strands import Agent
+
+if sys.platform.startswith("win"):
+    pytest.skip("skipping on windows until issue #11 is resolved", allow_module_level=True)
+
 from strands_tools import editor
 from strands_tools.editor import (
     CONTENT_HISTORY,

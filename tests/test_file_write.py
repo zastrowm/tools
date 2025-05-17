@@ -3,6 +3,7 @@ Tests for the file_write tool using the Agent interface.
 """
 
 import os
+import platform
 from unittest.mock import patch
 
 import pytest
@@ -148,7 +149,7 @@ def test_file_write_error_handling(mock_user_input, temp_file):
     # This should fail on most systems
     if os.name == "posix":  # Unix/Linux/Mac
         invalid_path = "/root/test_no_permission.txt"
-    elif os.name == "nt":  # Windows
+    elif platform.system() == "Windows":  # Windows
         invalid_path = "C:\\Windows\\System32\\config\\nopermission.txt"
     else:
         # Fallback - create a path that's too long
@@ -158,6 +159,8 @@ def test_file_write_error_handling(mock_user_input, temp_file):
         "toolUseId": "test-tool-use-id",
         "input": {"path": invalid_path, "content": "This will fail"},
     }
+
+    print(f"path is {invalid_path}")
 
     result = file_write.file_write(tool=tool_use)
 
